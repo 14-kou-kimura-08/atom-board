@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>atomboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script> -->
+		<!-- 開発用 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<link rel="stylesheet" href="./index.css">
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-title">atom board</div>
+		</div>
+		<div id="app">
+			<!-- codes ommited -->
+			<div v-for="atom in atoms">
+				<div class="atom-wrapper">
+					<div class="atom-content" id="show-modal" @click="atomClicked(atom)" v-html="atom.element"></div>
+				</div>
+			</div>
+			<modal v-if="showModal" @close="showModal = false">
+				<div slot="body">
+					<div class="modal-html">
+						<span class="modal-html-title">HTML</span>
+						<pre>{{ html }}</pre>
+					</div>
+					<div class="modal-css">
+						<span class="modal-css-title">CSS</span>
+						<pre>{{ css }}</pre>
+					</div>
+				</div>
+			</modal>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
