@@ -39,7 +39,14 @@ body {
 	margin: 15px 10px;
 	display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
+	box-shadow: 0 0px 20px #aaaaaa;
+	transition: all 0.3s;
+}
+
+.atom-wrapper:hover {
+	box-shadow: 0 0px 35px 5px #999999;
+	transition: all 0.3s;
 }
 
 .modal-mask {

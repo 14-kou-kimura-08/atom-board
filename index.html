@@ -17,8 +17,8 @@
 		<div id="app">
 			<!-- codes ommited -->
 			<div v-for="atom in atoms">
-				<div class="atom-wrapper">
-					<div class="atom-content" id="show-modal" @click="atomClicked(atom)" v-html="atom.element"></div>
+				<div class="atom-wrapper" @click="atomClicked(atom)">
+					<div class="atom-content" id="show-modal" v-html="atom.element"></div>
 				</div>
 			</div>
 			<modal v-if="showModal" @close="showModal = false">
